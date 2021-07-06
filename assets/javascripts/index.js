@@ -370,7 +370,7 @@ var Proof = {
 	},
 	setArray : function(buffer){
 		this.data = buffer;
-		this.filename = undefined;
+		this.filename = "upgraded_ots";
 		this.filesize = undefined;
 	},
 	exist : function(){
