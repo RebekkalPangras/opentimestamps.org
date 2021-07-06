@@ -54,12 +54,14 @@ function upgrade_verify(ots, hash, hashType, filename) {
         const bytes = detachedOts.serializeToBytes();
     	if(changed){
         	//success('Timestamp has been successfully upgraded!');
+		filename = filename || hash + ".ots";
         	download(filename, bytes);
 
         	// update proof
         	Proof.data = bin2String(bytes);
     	} else {
-        	// File not changed: just upgraded
+        	// File not changed: just 
+		
     	}
     	return OpenTimestamps.verify(detachedOts,detached)
     }).then( (results)=>{
@@ -370,7 +372,7 @@ var Proof = {
 	},
 	setArray : function(buffer){
 		this.data = buffer;
-		this.filename = "upgraded_ots";
+		this.filename = undefined;
 		this.filesize = undefined;
 	},
 	exist : function(){
