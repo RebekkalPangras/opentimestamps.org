@@ -60,8 +60,7 @@ function upgrade_verify(ots, hash, hashType, filename) {
         	// update proof
         	Proof.data = bin2String(bytes);
     	} else {
-        	// File not changed: just 
-		
+        	// File not changed: just upgraded		
     	}
     	return OpenTimestamps.verify(detachedOts,detached)
     }).then( (results)=>{
